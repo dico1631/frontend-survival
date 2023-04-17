@@ -17,11 +17,9 @@ interaction이 있는 app을 만드는데 더 수월하게 해준다.
 
 - 참고 자료
 
-[최신 사용법이 있는 문서(우선 탐색 추천)](https://beta.reactjs.org/)
+[최신 사용법이 있는 문서](https://beta.reactjs.org/)
 [공식문서](https://ko.reactjs.org/)
-- React로 작업하는 프로세스는 [Thinking in React](https://beta.reactjs.org/learn/thinking-in-react)를 참고. “상태”를 골라내는 게 핵심이다.
-- 한국어로 읽고 싶다면 [예전 문서의 설명](https://ko.reactjs.org/docs/thinking-in-react.html)만 살짝 참고하자(코드는 참고하지 말 것!).
-- [React 코어 개발자가 쓴 React에 대한 이해를 돕는 글](https://overreacted.io/ko/react-as-a-ui-runtime/) (필독!)
+[React 코어 개발자가 쓴 React에 대한 이해를 돕는 글](https://overreacted.io/ko/react-as-a-ui-runtime/)
 
 ### React 컴포넌트
 
@@ -41,8 +39,8 @@ react는 화면 전체를 다시 랜더링해주는 것이 아니라, 상태값(
 `useState()`가 return하는 setState 함수(idx 1)는 state(idx 0)를 변경하고, 리랜더링까지 자동으로 시행한다. 매개변수는 state의 초기값이다.
 setState 함수는 매개변수로 값을 받거나, 함수를 전달받는다. 값을 받으면 해당 값으로 state를 변경하고, 함수를 받으면 함수 내용에 따라 state를 변경한 뒤 **변경된 컴포넌트만** 리랜더링 한다.
 
-### IoC(Inversion of Control)
+### IoC(Inversion of Control) (미완성)
 제어의 역전
 
 
-### Library vs Framework
+### Library vs Framework (미완성)
