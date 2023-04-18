@@ -33,6 +33,7 @@ describe('add 함수는', () => { // 주어
 - TDD : 테스트 코드를 두고, 이를 기준으로 테스트를 하면서 코딩을 하는 것 / 테스트 주도 개발
 
 ### React Testing Library
+
 UI 테스트에 특화된 라이브러리로 실제 사용자 테스트와 같이 진행할 수 있다. 다만 이를 위해 테스트를 짤 때 화면에 노출되는 컴포넌트만을 가지고 잘 나오는지 확인하려고 하는 건 어려울 수 있음. (state 자체를 테스트하는 것이 좋을 수도 있음)
 [jest-dom github](https://github.com/testing-library/jest-dom)
 
