@@ -1,4 +1,4 @@
-# 1주차 5강\_Parce\&ESLint(작성중)
+# 1주차 5강_Parce&ESLint(작성중)
 
 ## 키워드
 
