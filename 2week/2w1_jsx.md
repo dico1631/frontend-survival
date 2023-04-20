@@ -4,19 +4,24 @@
 
 ### React에서 JSX를 사용하는 목적
 
-react와 jsx가 반드시 한 묶음은 아님(jsx 없이 react 사용 가능, react 없이 jsx 사용 가능)
-다만 jsx를 쓰고 babel과 같은 도구를 사용하면 자동으로 js로 변환해주어 react를 쉽게 사용할 수 있음
+jsx는 react에서 element를 제공합니다. react와 jsx가 반드시 같이 사용되어야 하는 것은 아닙니다. jsx 없이 react를 사용할 수 있으며, react 없이 jsx도 사용 가능합니다. 다만 jsx를 쓰고 babel과 같은 도구를 사용하면 자동으로 js로 변환해주어 react를 보다 쉽게 사용할 수 있습니다. 따라서 jsx는 react 사용 시 Syntactic sugar를 위해서 사용됩니다.
 
-### Syntactic sugar
+#### Syntactic sugar
 
-### React.createElement
+문법적 설탕이라는 문구 그대로, 문법적 내용은 그대로인데 사람이 더 직관적으로 코드를 사용할 수 있도록 "달콤하게" 만든다는 의미.
 
-react element 트리를 만들고 내용을 갱신하는데 사용됨
+### JSX없이 react하기
 
-#### 매개변수
+jsx로 입력된 코드는 js로 번역이 되어 실행됩니다. 따라서 js와 jsx는 1:1 호환이 가능합니다. react의 작동원리를 명확하게 파악하기 위해서는 우선 jsx없이 react를 해보는 경험이 필요합니다. jsx를 입력하여 js로 해석된 코드를 보고 싶다면 아래 사이트에서 쉽게 확인할 수 있습니다.
+[the online Babel compiler](https://babeljs.io/repl/#?presets=react&code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA)
 
-- tag 자체 or 객체 생성 함수, 속성 dict, tag 안에 text
-- tag는 소문자로 시작, 객체 생성 함수 이름은 대문자로 시작
+#### React.createElement
+
+createElement는 언어 그대로 react element를 만들고, 내용을 갱신하는데 사용됩니다. 이 element들은 트리구조를 가지고 있습니다.
+
+- 매개변수: `React.createElement("button", { type: "button", onClick: () => setCount(count + 1) }, "Increase")`
+  - tag 자체 or 객체 생성 함수, 속성 dict, tag 안에 text
+  - 첫 번째 매개변수인 element의 경우 html tag는 소문자로 시작, 객체 생성 함수 이름은 대문자로 시작
 
 ### React Element
 
