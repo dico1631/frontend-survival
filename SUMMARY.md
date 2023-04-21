@@ -9,3 +9,5 @@
   * [1주차 과제](1/1w\_hw.md)
 * [기타](other/README.md)
   * [github ssh 사용법](other/github\_ssh.md)
+* [2주차](2week/README.md)
+  * [2주차 1강\_jsx](2week/2w1\_jsx.md)
