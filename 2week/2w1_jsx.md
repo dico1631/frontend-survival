@@ -1,21 +1,19 @@
-# 2주차 1강_jsx
+# 2주차 1강_jsx(작성중)
 
-## 내용 정리
-
-### React에서 JSX를 사용하는 목적
+## React에서 JSX를 사용하는 목적
 
 jsx는 react에서 element를 제공합니다. react와 jsx가 반드시 같이 사용되어야 하는 것은 아닙니다. jsx 없이 react를 사용할 수 있으며, react 없이 jsx도 사용 가능합니다. 다만 jsx를 쓰고 babel과 같은 도구를 사용하면 자동으로 js로 변환해주어 react를 보다 쉽게 사용할 수 있습니다. 따라서 jsx는 react 사용 시 Syntactic sugar를 위해서 사용됩니다.
 
-#### Syntactic sugar
+### Syntactic sugar
 
 문법적 설탕이라는 문구 그대로, 문법적 내용은 그대로인데 사람이 더 직관적으로 코드를 사용할 수 있도록 "달콤하게" 만든다는 의미.
 
-### JSX없이 react하기
+## JSX없이 react하기
 
 jsx로 입력된 코드는 js로 번역이 되어 실행됩니다. 따라서 js와 jsx는 1:1 호환이 가능합니다. react의 작동원리를 명확하게 파악하기 위해서는 우선 jsx없이 react를 해보는 경험이 필요합니다. jsx를 입력하여 js로 해석된 코드를 보고 싶다면 아래 사이트에서 쉽게 확인할 수 있습니다.
 [the online Babel compiler](https://babeljs.io/repl/#?presets=react&code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA)
 
-#### React.createElement
+### React.createElement
 
 createElement는 언어 그대로 react element를 만들고, 내용을 갱신하는데 사용됩니다. 이 element들은 트리구조를 가지고 있습니다.
 
@@ -53,8 +51,3 @@ StrictMode는 개발 중 발생할 수 있는 잠재적인 문제를 발견할 �
 ### 새로 안 용어
 
 - XML과 같다 = 열고 닫는 태그 사용(html과 비슷함)
-- 명령형 프로그래밍 vs 선언적 프로그래밍
-  - 명령형 프로그리밍이란 실제 코드가 작동하는 기본 원리에 집중하여, 
-
-패턴
-1 2 3 4 5 6 > 2 3 4 5 6 7 에서 1이 없어지고, 7이 생겼다는 것을 알도록 key를 사용함
