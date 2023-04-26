@@ -18,3 +18,10 @@
 
 캡슐화
 스키마
+객체 지향-solid 원칙
+선언형 vs 명령형
+rest Api vs graph ql
+thinking in react docs
+js reduce 함수
+typescript 사용자 정의 타입, interface
+typescript export default
