@@ -1,4 +1,4 @@
-# 3주차 1강_React State
+# 3주차 2강_React State
 
 ## 설명
 
