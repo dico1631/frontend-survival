@@ -11,6 +11,6 @@
   * [2주차 1강\_jsx](2week/2w1\_jsx.md)
 * [3주차](3week/README.md)
   * [3주차 1강\_reactComponent](3week/3w1\_reactComponent.md)
-  * [3주차 1강\_reactState(작성중)](3week/3w2\_reactState.md)
+  * [3주차 2강\_reactState](3week/3w2\_reactState.md)
 * [기타](other/README.md)
   * [github ssh 사용법](other/github\_ssh.md)
