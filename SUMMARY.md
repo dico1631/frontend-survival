@@ -12,7 +12,7 @@
 * [3주차](3week/README.md)
   * [3주차 1강\_reactComponent](3week/3w1\_reactComponent.md)
   * [3주차 2강\_reactState](3week/3w2\_reactState.md)
-* [4주차](README.md)
+* [4주차](4week/README.md)
   * [4주차 1강\_Express](4week/4w1\_express.md)
   * [4주차 2강\_Fetch API & CORS](4week/4w2\_fetchAPI_CORS.md)
   * [4주차 3강\_React의 Hook](4week/4w3\_reactHook_.md)
