@@ -30,6 +30,8 @@ const [count, setCount] = useState(0);
 
 ## 강의를 들으면서 든 생각
 
+4강 데브노트에 작성함
+
 ### 추가로 공부할 것
 
 추상화
