@@ -15,7 +15,7 @@
 * [4주차](4week/README.md)
   * [4주차 1강\_Express](4week/4w1\_express.md)
   * [4주차 2강\_Fetch API & CORS](4week/4w2\_fetchAPI_CORS.md)
-  * [4주차 3강\_React의 Hook](4week/4w3\_reactHook_.md)
+  * [4주차 3강\_React의 Hook](4week/4w3\_reactHook.md)
   * [4주차 4강\_useRef & Custom Hook](4week/4w4\_useRefHook.md)
   * [4주차 5강\_usehooks-ts)](4week/4w5\_usehooks_ts.md)
 * [기타](other/README.md)
