@@ -9,22 +9,20 @@ hook이 생기면서 function component만 사용하여 react app을 구성할 �
 
 #### Hook 사용 규칙
 
-1. 같은 hook을 여러 번 호출함으로써 this를 사용하지 않고도 독립적인 state와 함수를 정의할 수 있습니다. 
+1. 같은 hook을 여러 번 호출함으로써 this를 사용하지 않고도 독립적인 state와 함수를 정의할 수 있습니다.
 2. Hook은 if, for, 중첩 함수와 같은 함수 내에 있는 block 내부에 호출될 수 없습니다. 반드시 최상위에 있는 function body에서 호출되어야 합니다.
 3. 일반 js 함수가 아닌 React 함수에서만 사용 가능합니다.
 
-#### 대표적인 Hook의 종류(작성 중)
-
+#### 대표적인 Hook의 종류
 - useState: state와 setState 함수를 return합니다. 이를 통해 서로 영향을 주지 않는 state들을 정의하고 값을 업데이트 할 수 있습니다. 값이 업데이트 될 때마다 리랜더링됩니다.
 
 ```jsx
 const [count, setCount] = useState(0);
 ```
 
-- useEffect:
-- useContext
-- useRef
-- useLayoutEffect
+- useEffect(작성 중)
+- useContext(작성 중)
+- useLayoutEffect(작성 중)
 
 - **React StrictMode**: strictMode는 개발 시 오류를 잡아낼 수 있도록 하는 모드로 strictMode가 선언된 부분은 2번 실행되면서 서로 비교하는 방식으로 오류 여부를 판별합니다. 따라서 hook 사용 시 의존성 배열을 활용해 1회만 사용되도록 하여도 최초에 2번 실행되게 됩니다.
 
