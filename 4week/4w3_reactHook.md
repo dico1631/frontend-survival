@@ -4,11 +4,11 @@
 
 - React Hook 이란
 - Hooks
-    - useState
-    - useEffect
-    - useContext
-    - useRef
-    - useLayoutEffect
+  - useState
+  - useEffect
+  - useContext
+  - useRef
+  - useLayoutEffect
 - React StrictMode 란
 
 ## 강의를 들으면서 든 생각
