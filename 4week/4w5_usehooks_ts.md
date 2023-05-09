@@ -34,12 +34,6 @@ setInterval의 비동기 실행으로 인해 생기는 문제를 해결해주는
   - [React에서의 타이머 part 1 : setInterval 말고 이것! - 코드종님 영상](https://youtu.be/2tUdyY5uBSw)
 - [Ref 활용](https://overreacted.io/making-setinterval-declarative-with-react-hooks/)
 
-#### useEventListener(작성 중)
-
-#### useLocalStorage(작성 중)
-
-#### useDarkMode(작성 중)
-
 ## 강의를 들으면서 든 생각
 
 hook이 정말 많아서 활용을 잘하기 위해서는 많이 써봐야겠다는 생각이 들었다.

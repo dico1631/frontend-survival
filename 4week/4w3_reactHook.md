@@ -14,17 +14,44 @@ hook이 생기면서 function component만 사용하여 react app을 구성할 �
 3. 일반 js 함수가 아닌 React 함수에서만 사용 가능합니다.
 
 #### 대표적인 Hook의 종류
-- useState: state와 setState 함수를 return합니다. 이를 통해 서로 영향을 주지 않는 state들을 정의하고 값을 업데이트 할 수 있습니다. 값이 업데이트 될 때마다 리랜더링됩니다.
+
+##### useState
+
+state와 setState 함수를 return합니다. 이를 통해 서로 영향을 주지 않는 state들을 정의하고 값을 업데이트 할 수 있습니다. 값이 업데이트 될 때마다 리랜더링됩니다.
 
 ```jsx
 const [count, setCount] = useState(0);
 ```
 
-- useEffect(작성 중)
-- useContext(작성 중)
-- useLayoutEffect(작성 중)
+##### useEffect
 
-- **React StrictMode**: strictMode는 개발 시 오류를 잡아낼 수 있도록 하는 모드로 strictMode가 선언된 부분은 2번 실행되면서 서로 비교하는 방식으로 오류 여부를 판별합니다. 따라서 hook 사용 시 의존성 배열을 활용해 1회만 사용되도록 하여도 최초에 2번 실행되게 됩니다.
+- [useEffect 완벽가이드 - 함수를 이펙트 안으로 옮기기](https://overreacted.io/ko/a-complete-guide-to-useeffect/#%ED%95%A8%EC%88%98%EB%A5%BC-%EC%9D%B4%ED%8E%99%ED%8A%B8-%EC%95%88%EC%9C%BC%EB%A1%9C-%EC%98%AE%EA%B8%B0%EA%B8%B0)
+
+렌더링 이후에 해야 할 일을 작성합니다. react의 외부와 관련된 코드를 작성합니다.
+
+```jsx
+useEffect(() => {
+	document.title = `Now: ${new Date().getTime()}`;
+});
+```
+
+useEffect의 두 번째 매개변수로 의존성 배열을 넣어서 useEffect의 영향을 받는 대상을 한정할 수 있습니다. state명이 담긴 배열을 전달하면 해당 state가 변경되었을 경우에만 작성된 코드가 실행됩니다.
+
+```jsx
+useEffect(() => {
+	document.title = `Now: ${new Date().getTime()}`;
+}, [state명]);
+```
+
+의존성 배열에 빈 배열을 넣으면 제일 처음 랜더링되었을 때 1번만 실행됩니다. fetch로 데이터를 불러오는 작업을 할 때 주로 사용됩니다. (usehooks-ts 라이브러리의 useEffectOnce를 사용하면 더 명시적으로 의미를 작성할 수 있습니다.)
+
+```jsx
+useEffect(() => {
+	document.title = `Now: ${new Date().getTime()}`;
+}, []);
+```
+
+- **React StrictMode**: strictMode는 개발 시 오류를 잡아낼 수 있도록 하는 모드로 strictMode가 선언된 부분은 2번 실행되면서 서로 비교하는 방식으로 오류 여부를 판별합니다. 따라서 hook 사용 시 의존성 배열을 활용해 1회만 사용되도록 하여도 최초에 2번 실행되게 됩니다. 이는 개발할 때만 작동되기에 배포 후에는 영향이 가지 않습니다.
 
 ## 강의를 들으면서 든 생각
 
