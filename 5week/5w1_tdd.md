@@ -33,7 +33,31 @@ TDD의 2단계에 나와있는 것처럼 TDD는 한 번에 완벽한 코드를 �
 
 TDD를 위해서는 테스트 코드를 작성하고 테스트를 작동시켜줄 테스팅 도구가 필요합니다. Jest는 페이스북에 만든 테스팅 도구로 테스트에 필요한 대부분의 기능을 가지고 있습니다.
 
-### Describe - Context - It 패턴
+- 예시 코드
+
+```jsx
+// test: 테스트에 대한 간단한 설명과 테스트 코드를 넣는다.
+test('테스트 설명', () => {
+  //expect: 실행 항목을 작성
+  //toBe: matchar 함수를 통해 예상 결과를 작성, matchar로 사용할 수 있는 다양한 함수를 제공함
+  expect(fn.makeUser('mike', 30)).toBe({
+    name: 'mike',
+    age: 30
+  });
+
+  expect(fn.makeUser('mike', 30)).toBeEqual({
+    name: 'mike',
+    age: 30
+  });
+});
+```
+
+- matchar
+
+expect의 실행 결과가 예상되는 결과와 일치하는지 매칭해주기 위한 함수
+[matchar 함수 전체 목록](https://mulder21c.github.io/jest/docs/en/next/expect)
+
+#### Describe - Context - It 패턴
 
 테스트 케이스를 정의하는 방법은 크게 아래 2가지로 나뉩니다. 이때 2번째 방식이 Describe - Context - It 패턴을 활용한 방식입니다.
 
@@ -71,7 +95,7 @@ describe('add', () => {
 });
 ```
 
-#### BDD란? <a id="bdd"></a>
+##### BDD란? <a id="bdd"></a>
 
 BDD란 Behavior Driven Development의 약자로 사용자의 행위 중심으로 테스트 시나리오를 작성합니다. 사용자 중심으로 진행되기에 요구사항 정의서, 기능정의서, 기획서와 같이 개발 시작 전의 산출물을 통해 테스트 시나리오가 작성됩니다. 덕분에 이후 누락된 기획 항목이 발생되었을 때도 시나리오 개선 및 로직 구현이 더 용이하다는 장점이 있습니다.
 
