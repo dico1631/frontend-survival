@@ -152,6 +152,7 @@ app에는 아래와 같이 fetch API를 사용하는 코드가 작성되어 있�
   ```
 
 **polyfill(폴리필)**: `useFetchProduct.ts` 파일에서 사용된 fetch 함수는 실행 환경인 window 브라우저에는 있으나 개발 환경인 node에는 없는 함수입니다.따라서 fetch 함수로 오류가 날 경우 polyfill 라이브러리를 설치하면 정상적으로 작동합니다.<br/>(최신 버전의 node에는 fetch 함수가 포함되어 있어, 이와 같은 추가 작업이 필요하지 않습니다.)
+
 - [GitHub에서 만든 fetch polyfill](https://github.com/github/fetch)
 
 ## 강의를 들으면서 든 생각
