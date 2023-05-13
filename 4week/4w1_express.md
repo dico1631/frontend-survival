@@ -6,7 +6,7 @@
 
 Express는 node.js를 사용하여 쉽게 서버를 구축하고 API를 만들 수 있도록 하는 웹 애플리케이션 프레임워크입니다. 아래 코드 예시와 같이 Express를 통해 HTTP Method를 쉽게 정의하고 사용할 수 있습니다.
 
-\[Express docs\_Hello world 예제]\([https://expressjs.com/ko/starter/hello-world.html](https://expressjs.com/ko/starter/hello-world.html))
+{% embed url="https://expressjs.com/ko/starter/hello-world.html" %}
 
 ```javascript
 import express from 'express';
