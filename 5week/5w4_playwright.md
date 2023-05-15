@@ -1,4 +1,4 @@
-# 5주차 4강_Playwright
+# 5주차 4강\_Playwright
 
 ## 설명
 
@@ -26,7 +26,7 @@ Headless Chrome은 브라우저 화면이 뜨지 않고 인터넷 상의 행동�
 
 #### 사용법
 
-- 테스트 도구 설정 파일: `playwright.config.ts` 파일
+* 테스트 도구 설정 파일: `playwright.config.ts` 파일
 
 ```jsx
 import { PlaywrightTestConfig } from '@playwright/test';
@@ -44,7 +44,7 @@ const config: PlaywrightTestConfig = {
 export default config;
 ```
 
-- 테스트 시나리오 파일: `tests/home.spec.ts`
+* 테스트 시나리오 파일: `tests/home.spec.ts`
 
 ```jsx
 import { test, expect } from '@playwright/test';
@@ -80,13 +80,13 @@ test('Click the “Increase” button', async ({ page }) => {
 });
 ```
 
-- 테스트 실행: `npx playwright test`
+* 테스트 실행: `npx playwright test`
 
 ### CodeceptJS
 
-syntactic sugar를 위한 도구로 더 사람 친화적으로 이해하기 쉬운 코드로 테스트 시나리오를 짤 수 있도록 해준다. 어떤 테스팅 도구 기반으로 돌아갈 지더 선택 할 수 있다. 단순한 기능 테스트 시 유용하며, 복잡할 떈 부족한 면이 있다.
+syntactic sugar를 위한 도구로 더 사람 친화적으로 이해하기 쉬운 코드로 테스트 시나리오를 짤 수 있도록 해준다. 어떤 테스팅 도구 기반으로 돌아갈 지도  선택 할 수 있다. 단순한 기능 테스트 시 유용하며, 복잡할 떈 부족한 면이 있다.
 
-- 사용 코드 예시
+* 사용 코드 예시
 
 ```jsx
 Feature('Google');
@@ -105,9 +105,9 @@ Scenario('Search “CodeceptJS”', ({ I }) => {
 
 ### 추가로 공부할 것
 
-- CI 환경
-- Promise
-- Promise.all(): 내부 동작이 모두 성공적으로 종료된 뒤에 다음 것이 실행되도록 함
+* CI 환경
+* Promise
+* Promise.all(): 내부 동작이 모두 성공적으로 종료된 뒤에 다음 것이 실행되도록 함
 
 ```jsx
 await Promise.all((
