@@ -199,4 +199,6 @@ const counterStore = container.resolve(CounterStore);
 
 ## 추가로 공부할 것
 
-context(React에서 External Store 관리를 할 수 있게 해주는 것) 제어의 역전(IoC: Inversion of Control)
+context(React에서 External Store 관리를 할 수 있게 해주는 것)
+
+제어의 역전(IoC: Inversion of Control)
