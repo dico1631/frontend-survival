@@ -83,7 +83,7 @@ function App() {
 우선 Layout이 담긴 컴포넌트를 생성합니다. routes 객체를 통해 컴포넌트가 교체될 자리에 Outlet을 넣습니다. 그리고 routes 객체에 element의 값으로 생성한 Layout 컴포넌트를 연결하고, chlidren에 path와 element가 연결된 객체 배열을 넣습니다. 그러면 랜더링 시 현재 path와 chlidren의 path가 일치하는 컴포넌트가 Outlet 위치에 삽입됩니다.
 
 ```tsx
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 function Layout(){
  // main tag는 삭제함
@@ -122,4 +122,4 @@ function App() {
 
 ### 추가로 공부할 것
 
-전체 흐름과 그렇게 진행하는 이유는 알았으나, 강의 내용 중 `<Page />`를 사용하는 것이 아니라 route 객체를 만들어서 사용하는 것이 좋은 이유를 아직 잘 모르겠다.
+- 전체 흐름과 그렇게 진행하는 이유는 알았으나, 강의 내용 중 `<Page />`를 사용하는 것이 아니라 route 객체를 만들어서 사용하는 것이 좋은 이유를 아직 잘 모르겠다.
