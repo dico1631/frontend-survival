@@ -17,7 +17,7 @@
   * [4주차 2강\_Fetch API & CORS](4week/4w2\_fetchAPI\_CORS.md)
   * [4주차 3강\_React의 Hook](4week/4w3\_reactHook.md)
   * [4주차 4강\_useRef & Custom Hook](4week/4w4\_useRefHook.md)
-  * [4주차 5강\_usehooks-ts)](4week/4w5\_usehooks\_ts.md)
+  * [4주차 5강\_usehooks-ts](4week/4w5\_usehooks\_ts.md)
 * [5주차](5week/README.md)
   * [5주차 1강\_TDD](5week/5w1\_tdd.md)
   * [5주차 2강\_React Testing Library](5week/5w2\_reactTestingLibrary.md)
