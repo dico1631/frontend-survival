@@ -16,7 +16,7 @@ node.js는 V8으로 빌드된 이벤트 기반 자바스크립트 런타임입�
 
 ### NPM(Node Package Manager)
 
-Node.js의 패키지를 관리할 수 있는 도구
+NPM은 Node.js의 패키지를 관리하는 도구입니다. node.js가 상용화되면서 node.js 기반으로 만들어진 패키지가 배포되는 거대한 오픈 소스 생태계 [https://www.npmjs.com](https://www.npmjs.com) 가 만들어졌습니다. 우리는 npm을 통해 이 곳에 배포된 node.js 패키지를 코드 한 줄로 손쉽게 다운로드 받고 업데이트 하면서 사용할 수 있습니다.
 
 * package.json: 패키지 목록과 이름, 버전, 설명, 작성자, 라이센스 등 기본 정보가 담긴 json 파일
 * package-lock.json: npm을 사용해서 node\_modules 트리나 package.json 파일을 수정하게 되면 자동으로 생성되는 파일
