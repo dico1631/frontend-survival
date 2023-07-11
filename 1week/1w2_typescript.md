@@ -239,6 +239,8 @@ const add:AddProps = (a, b, c?: number) => {
 
 3. generic type
 
+> generic type은 대문자로 시작합니다 .
+
 typeScript는 generic type을 통해 Polymorphism(다형성)을 표현할 수 있도록 해줍니다. Polymorphism이란 many의 의미를 가진 poly와 structure의 의미를 가진 morphism의 합성어로, 말 그대로 다양한 구조를 가진 형태를 말합니다. 그리고 typeScript에서의 다양한 형태란, 다양한 type을 의미합니다.
 
 즉, concrete type 중 어떤 타입이 어떤 조합으로 들어올 지 모르는 상황에서는 type을 명확하게 정의하는 대신에 generic type을 사용하여 type을 지정합니다. generic type은 typeScript의 타입 추론을 활용하여, 실제 사용할 때 들어오는 argument에 따라 해당 함수의 parameter type과 return type을 통해 타입을 추론하게 하는 방법을 말합니다.
@@ -305,9 +307,34 @@ const d = superPrint([1,2,true], "name");
 const e = superPrint([1,2,true,"a"], false);
 ```
 
+일반적으로 generic type은 외부 라이브러리를 사용하거나 , 혹은 만들 때 사용됩니다. 또한 객체의 일부에 type 자유도를 줄 때 generic type를 사용할 수 있습니다. 그러면 객체를 생성할 때 들어가는 데이터를 통해 타입 유추를 하여 type이 결정됩니다. 이러한 속성을 이용해서 더 큰 type을 만들고, 이에 대한 세분화 된 type은 따로 선언하여 type들을 재사용 할 수 있는 모듈로 만들 수 있습니다.
 
+```typescript
+type PlayerProps<E> = {
+	name: string,
+	extraInfo: E //어떤 type의 내용이든 올 수 있음
+}
 
+// extraInfo은 string property를 가진 객체
 
+// 2번
+type NicoExtraProps = {hobby: string}
+
+const nico: PlayerProps<NicoExtraProps> = { //const nico: PlayerProps<{hobby: string}>
+	name: "nico",
+	extraInfo: {
+		hobby: "swimming",
+	}
+}
+
+// 3번: extraInfo은 null
+const mickey: PlayerProps<null> = {
+	name: "nico",
+	extraInfo: null,
+}
+```
+
+generic type은 typescript에서 제공하는 다양한 내장 객체에서도 사용됩니다. 대표적으로 `Array` 객체의 경우 배열 안에 어떤 원소든 들어갈 수 있도록 하기 위해 `Array<T>`로 되어있습니다. 따라서`Array<number>`은 `number[]`와 같습니다.
 
 
 
