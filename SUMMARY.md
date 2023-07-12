@@ -2,7 +2,10 @@
 
 * [1주차](README.md)
   * [1주차 1강\_개발환경 세팅](1week/1w1\_preparesystem.md)
-  * [1주차 2강\_TypeScript](1week/1w2\_typescript.md)
+  * [1주차 2강\_TypeScript](readme/1w2\_typescript/README.md)
+    * [TypeScript 기초](readme/1w2\_typescript/1w2\_typescript.md)
+    * [TypeScript에서 함수](readme/1w2\_typescript/1w2\_typescript-1.md)
+    * [TypeScript에서 객체지향](readme/1w2\_typescript/typescript.md)
   * [1주차 3강\_React(작성중)](1week/1w3\_react.md)
   * [1주차 4강\_Testing Library](1week/1w4\_testinglibrary.md)
   * [1주차 5강\_Parce\&ESLint(작성중)](1week/1w5\_parceleslint.md)
