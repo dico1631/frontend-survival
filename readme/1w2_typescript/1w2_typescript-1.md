@@ -1,6 +1,6 @@
 # TypeScript에서 함수
 
-### call signiture
+## call signiture
 
 함수를 호출할 떄 argument와 return 값의 type을 알 수 있도록 하는 방법으로 함수를 사용할 사람에게 가이드를 줄 수 있습니다. parameter 각각의 type을 지정하는 대신, type 예약어를 통해 타입을 묶어서 정의합니다.&#x20;
 
@@ -9,7 +9,7 @@
 </strong>const add:AddProps = (a, b) => a + b;
 </code></pre>
 
-### overloading
+## overloading
 
 typescript에서 overloading이란 call signiture를 여러 개 두어 다양한 type과 상황을 커버할 수 있도록 type을 지정하는 것입니다.
 
@@ -30,7 +30,7 @@ const puch: PushProps = (config) => {
     else{console.log(config.path)}
 }
 
-// 아래 둘 다 가능 
+// 아래 둘 다 가능
 Router.push("/home")
 
 Router.push({
@@ -47,14 +47,14 @@ type AddProps = {
     (a: number, b: number, c: number): number
 }
 
-// c는 optional이기에 ?: 표기 필요 
+// c는 optional이기에 ?: 표기 필요
 const add:AddProps = (a, b, c?: number) => {
     if(c){return a+b+c}
     return a+b;
 }
 ```
 
-### generic type
+## generic type
 
 > generic type은 대문자로 시작합니다 .
 
