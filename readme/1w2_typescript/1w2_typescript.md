@@ -54,12 +54,20 @@ let isOpened : boolean = true
 
 <pre class="language-typescript"><code class="lang-typescript"><strong>const player : {
 </strong>    name: string,
-    age?: number,
+    age?: number, // 선택항목
 } = {
     name: '민정',
     age: 29,
 }
 </code></pre>
+
+* 매개변수 값이 들어오지 않을 때를 대비해, 기본값을 지정할 수 있습니다.
+
+```typescript
+function greeting(name: string = 'world'): string {
+return `Hello, ${name}`;
+}
+```
 
 ### Alias (별칭)
 
@@ -143,6 +151,28 @@ let a: unknown;
 let b = a + 1 // 오류
 
 if(typeof a === 'number'){let b = a + 1} // 정상 
+```
+
+### 여러 조건을 동시에 충족해야 할 때(Intersection Type)
+
+&를 사용하며, &로 연결된 모든 조건을 충족해야 합니다. (교집합)
+
+```typescript
+type Human = {
+name: string;
+age: number;
+};
+
+type Creature = {
+hp: number;
+mp: number;
+};
+
+type Person = Human & Creature;
+
+let person: Person;
+
+person = { name: '홍길동', age: 13, hp: 256, mp: 16 };
 ```
 
 ### 함수의 type
