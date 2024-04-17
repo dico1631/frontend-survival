@@ -150,7 +150,7 @@ let a: unknown;
 
 let b = a + 1 // 오류
 
-if(typeof a === 'number'){let b = a + 1} // 정상 
+if(typeof a === 'number'){let b = a + 1} // 정상: typeof로 타입을 확인하고 사용해야 함
 ```
 
 ### 여러 조건을 동시에 충족해야 할 때(Intersection Type)
@@ -173,52 +173,4 @@ type Person = Human & Creature;
 let person: Person;
 
 person = { name: '홍길동', age: 13, hp: 256, mp: 16 };
-```
-
-### 함수의 type
-
-함수는 매개변수와 return 타입을 지정할 수 있습니다.
-
-#### &#x20;1. 매개변수 및  return type 지정
-
-```typescript
-type PlayerProps = {
-    name: string,
-    age?: number,
-}
-
-function playerMaker(name : string) : PlayerProps {
-    return {
-        // name: name을 줄여서 하나로 작성 
-        name
-    }
-}
-```
-
-#### 2. return 이 없을 때
-
-#### 1) void
-
-함수가 return을 하지 않을 경우에는 void type이라고 합니다. void는 명시적으로 작성하지 않아도 타입 추론을 통해 추론됩니다. 이는 해당 함수를 사용할 때 return 값을 받으려고 할 경우 오류를 알려줍니다.
-
-```typescript
-function hello(){
-    console.log("안녕");
-}
-```
-
-#### 2) never
-
-never은 함수가 **절대 return을 하지 않는다**는 의미입니다. 대표적으로 오류를 throw하는 경우가 있습니다 . 또한 조건문에서 가능한 모든 경우를 거친 else에서 사용되는 변수는 type이 never입니다.
-
-```typescript
-function hello():never{
-    throw new Error("xxx");
-}
-
-function hello(name:string|number){
-    if(typeof name === "string"){} // 여기서 name은 string 타입 
-    else if(typeof name === "number"){} // 여기서 name은 number타입 
-    else{} // 여기서 name은 never 타입 
-}
 ```
