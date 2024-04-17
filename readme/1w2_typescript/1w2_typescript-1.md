@@ -4,7 +4,7 @@
 
 함수는 파라미터와 return 타입을 지정할 수 있습니다.
 
-### 매개변수 및  return type 지정
+### 파라미터  및  return type 지정
 
 1. 파라미터 타입 지정: 파라미터 옆에 타입 작성
 2. return 타입 지정: 함수명( ) 옆에 타입 작성
@@ -17,7 +17,7 @@ function HelloUser(name : string) : string{
 
 파라미터가 필수가 아니라면 ? 를 쓰면 됩니다.
 
-? 는 `name: string | undefined` 와 동일한  의미를 지닙니다.
+? 는 `name: string | undefined` 와 동일한  의미를 지닙니다. (union type 사용 가능)
 
 ```typescript
 function HelloUser(name? : string) : string{
@@ -25,6 +25,24 @@ function HelloUser(name? : string) : string{
         return `user님 안녕하세요!`
     }
     return `${name}님 안녕하세요!`
+}
+```
+
+#### 객체의 타입 지정
+
+파라미터나 return값의 타입이 객체일 경우 `type`을 사용하여 객체 타입을 지정한 다음 이를 사용하면 됩니다.
+
+```typescript
+type PlayerProps = {
+    name: string,
+    age?: number,
+}
+
+function playerMaker(name : string) : PlayerProps {
+    return {
+        // name: name을 줄여서 하나로 작성 
+        name
+    }
 }
 ```
 
@@ -60,25 +78,13 @@ function hello(name:string|number){
 }
 ```
 
+#### 3) void와 never의 차이 (작성중)
 
 
-```typescript
-type PlayerProps = {
-    name: string,
-    age?: number,
-}
-
-function playerMaker(name : string) : PlayerProps {
-    return {
-        // name: name을 줄여서 하나로 작성 
-        name
-    }
-}
-```
 
 ## call signiture
 
-함수를 호출할 떄 argument와 return 값의 type을 알 수 있도록 하는 방법으로 함수를 사용할 사람에게 가이드를 줄 수 있습니다. parameter 각각의 type을 지정하는 대신, type 예약어를 통해 타입을 묶어서 정의합니다.
+파라미터와  return 타입을 각각 지정하는 대신 type 예약어를 통해 묶어서 정의할 수 있습니다. 이렇게 타입을 지정하면 코드에 마우스를 올렸을 때 정의된 함수의 타입 형태가 가이드로 나와 함수를 사용할 사람에게 가이드를 줄 수 있습니다.&#x20;
 
 ```typescript
 type AddProps = (a: number, b: number) => number; //return을 하지 않을 경우에는 void
@@ -86,11 +92,26 @@ type AddProps = (a: number, b: number) => number; //return을 하지 않을 경�
 const add:AddProps = (a, b) => a + b;
 ```
 
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 ## overloading
 
 typescript에서 overloading이란 call signiture를 여러 개 두어 다양한 type과 상황을 커버할 수 있도록 type을 지정하는 것입니다.
 
-* 여러 type의 argument가 가능하도록 만듦
+예시1)  b의 타입에 number와 string이 동시에 지정되어 있어, 두 가지 경우 모두 커버할 수 있다.
+
+<pre class="language-ts"><code class="lang-ts"><strong>type Add2 = {
+</strong>    (a: number, b: number): number
+    (a: number, b: string): number
+}
+
+const add5: Add2 = (a, b) => {
+    if(typeof b === 'string') return a
+    return a + b
+}
+</code></pre>
+
+예시2) next.js의  라우터: next.js에서 라우터의 경로를 설정할 때, stirng과 객체 형태 모두 사용할 수 있도록 되어있음.
 
 <pre class="language-typescript"><code class="lang-typescript">type ConfigProps = {
     path: string,
@@ -116,7 +137,7 @@ Router.push({
 })
 </code></pre>
 
-* argument의 일부를 optional로 만듦
+* 파라미터의 일부를 optional로 만듦
 
 ```typescript
 type AddProps = {
