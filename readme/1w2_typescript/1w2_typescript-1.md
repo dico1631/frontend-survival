@@ -1,26 +1,103 @@
 # TypeScript에서 함수
 
+## 함수에 타입을 지정하는 방법
+
+함수는 파라미터와 return 타입을 지정할 수 있습니다.
+
+### 매개변수 및  return type 지정
+
+1. 파라미터 타입 지정: 파라미터 옆에 타입 작성
+2. return 타입 지정: 함수명( ) 옆에 타입 작성
+
+```typescript
+function HelloUser(name : string) : string{
+    return `${name}님 안녕하세요!`
+}
+```
+
+파라미터가 필수가 아니라면 ? 를 쓰면 됩니다.
+
+? 는 `name: string | undefined` 와 동일한  의미를 지닙니다.
+
+```typescript
+function HelloUser(name? : string) : string{
+    if(!name) {
+        return `user님 안녕하세요!`
+    }
+    return `${name}님 안녕하세요!`
+}
+```
+
+### return 이 없을 때
+
+#### 1) void
+
+함수가 return을 하지 않을 경우에는 void type이라고 합니다. void는 명시적으로 작성하지 않아도 타입 추론을 통해 추론됩니다. 이는 해당 함수를 사용할 때 return 값을 받으려고 할 경우 오류를 알려줍니다.
+
+```typescript
+function hello() : void{
+    console.log("안녕");
+}
+
+function hello(){        // void는 쓰지 않아도 됩니다.
+    console.log("안녕");
+}
+```
+
+#### 2) never
+
+never은 함수가 **절대 return을 하지 않는다**는 의미입니다. 대표적으로 오류를 throw하는 경우가 있습니다 . 또한 조건문에서 가능한 모든 경우를 거친 else에서 사용되는 변수는 type이 never입니다.
+
+```typescript
+function hello():never{
+    throw new Error("xxx");
+}
+
+function hello(name:string|number){
+    if(typeof name === "string"){} // 여기서 name은 string 타입 
+    else if(typeof name === "number"){} // 여기서 name은 number타입 
+    else{} // 여기서 name은 never 타입 
+}
+```
+
+
+
+```typescript
+type PlayerProps = {
+    name: string,
+    age?: number,
+}
+
+function playerMaker(name : string) : PlayerProps {
+    return {
+        // name: name을 줄여서 하나로 작성 
+        name
+    }
+}
+```
+
 ## call signiture
 
-함수를 호출할 떄 argument와 return 값의 type을 알 수 있도록 하는 방법으로 함수를 사용할 사람에게 가이드를 줄 수 있습니다. parameter 각각의 type을 지정하는 대신, type 예약어를 통해 타입을 묶어서 정의합니다.&#x20;
+함수를 호출할 떄 argument와 return 값의 type을 알 수 있도록 하는 방법으로 함수를 사용할 사람에게 가이드를 줄 수 있습니다. parameter 각각의 type을 지정하는 대신, type 예약어를 통해 타입을 묶어서 정의합니다.
 
-<pre class="language-typescript"><code class="lang-typescript">type AddProps = (a: number, b: number) => number; //return을 하지 않을 경우에는 void
-<strong>
-</strong>const add:AddProps = (a, b) => a + b;
-</code></pre>
+```typescript
+type AddProps = (a: number, b: number) => number; //return을 하지 않을 경우에는 void
+
+const add:AddProps = (a, b) => a + b;
+```
 
 ## overloading
 
 typescript에서 overloading이란 call signiture를 여러 개 두어 다양한 type과 상황을 커버할 수 있도록 type을 지정하는 것입니다.
 
-* 여러 type의 argument가 가능하도록 만듦&#x20;
+* 여러 type의 argument가 가능하도록 만듦
 
 <pre class="language-typescript"><code class="lang-typescript">type ConfigProps = {
     path: string,
     state: object
 }
-<strong>
-</strong><strong>type PushProps = {
+
+<strong>type PushProps = {
 </strong>    (path: string): void
     (config: ConfigProps): void
 }
@@ -39,7 +116,7 @@ Router.push({
 })
 </code></pre>
 
-* argument의 일부를 optional로 만듦&#x20;
+* argument의 일부를 optional로 만듦
 
 ```typescript
 type AddProps = {
@@ -64,8 +141,6 @@ typeScript는 generic type을 통해 Polymorphism(다형성)을 표현할 수 �
 
 예시를 통해 사용방법과 정의를 알아봅시다.
 
-
-
 아래 코드처럼 superPrint에 number\[], boolean\[], string\[] 뿐만 아니라 이들이 섞여있는 배열까지도 무엇이든 들어올 수 있는 경우에 모든 case를 명시적으로 작성하는 것은 불가능합니다.
 
 ```typescript
@@ -87,8 +162,6 @@ const d = superPrint([1,2,true]);
 const e = superPrint([1,2,true,"a"]);
 ```
 
-
-
 따라서 이런 경우 타입 추론을 하여 상황마다 타입을 정할 수 있도록 generic type을 씁니다. 여기서 T는 대명사로 어떤 단어도 사용할 수 있습니다. 이 T 자리는 사용할 당시 들어오는 argument에 따라 그 타입이 추론되어 들어갈 것입니다.
 
 ```typescript
@@ -103,8 +176,6 @@ const c = superPrint([true, false]);
 const d = superPrint([1,2,true]);
 const e = superPrint([1,2,true,"a"]);
 ```
-
-
 
 generic type을 여러 개 사용하고 싶을 땐 <>에 , 로 여러 개를 넣으면 됩니다.
 
